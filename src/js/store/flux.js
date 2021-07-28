@@ -3,31 +3,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			apiURL: "https://swapi.dev/api",
 			people: [],
-			vehicule: [],
+			vehicles: [],
 			planets: [],
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			favorites: []
 		},
 		actions: {
 			fetchPeople: () => {
 				const store = getStore();
 				fetch(`${store.apiURL}/people/`)
 					.then(response => response.json())
-					.then(data => (store.people = data))
-					.then(() => {
-						store.people = store.people.results;
-						console.log(store.people);
+					.then(data => {
+						setStore({ people: data.results });
 					})
+					.then(() => console.log(store.people))
 					.catch(function(error) {
 						console.log("Looks like there was a problem: \n", error);
 					});
@@ -42,6 +30,46 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 	store.people = jsonResponse.results;
 			// 	console.log(store.people);
 			// },
+
+			fetchVehicule: () => {
+				const store = getStore();
+				fetch(`${store.apiURL}/vehicles/`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ vehicles: data.results });
+					})
+					.then(() => console.log(store.vehicles))
+					.catch(function(error) {
+						console.log("Looks like there was a problem: \n", error);
+					});
+			},
+
+			fetchPlanets: () => {
+				const store = getStore();
+				fetch(`${store.apiURL}/planets/`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ planets: data.results });
+					})
+					.then(() => console.log(store.planets))
+					.catch(function(error) {
+						console.log("Looks like there was a problem: \n", error);
+					});
+			},
+
+			addToFavorite: itemName => {
+				const oldFavorites = getStore().favorites;
+				const foundFavorite = oldFavorites.find(item => item === itemName);
+				if (foundFavorite) {
+					console.log("dentro del if");
+					console.log(oldFavorites);
+					const newArray = oldFavorites.filter(item => item !== foundFavorite); //remove item
+					console.log(newArray);
+					setStore({ favorites: newArray });
+				} else {
+					setStore({ favorites: [...oldFavorites, itemName] });
+				}
+			},
 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

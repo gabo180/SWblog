@@ -5,11 +5,25 @@ import { Context } from "../store/appContext";
 
 export const Single = props => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
-	console.log(store);
+	const { theid, type } = useParams();
+
+	let targetItem = {};
+
+	if (type === "person") {
+		targetItem = store.people.find(person => person.name == theid);
+	}
+
+	if (type === "planet") {
+		targetItem = store.planets.find(planet => planet.name == theid);
+	}
+
+	if (type === "vehicle") {
+		targetItem = store.vehicles.find(vehicle => vehicle.name == theid);
+	}
+
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
+			<h1 className="display-4">{targetItem.name}</h1>
 
 			<hr className="my-4" />
 

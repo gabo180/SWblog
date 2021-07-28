@@ -23,6 +23,8 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 			state.actions.fetchPeople();
+			state.actions.fetchVehicule();
+			state.actions.fetchPlanets();
 
 			/**
 			 * EDIT THIS!
