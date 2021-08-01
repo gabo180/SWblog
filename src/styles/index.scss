@@ -1,3 +1,42 @@
-/* 
-    General Styles
-*/
+.contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemFav {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar {
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.btn-group, .btn-group-vertical {
+    display: block;
+}
+
+.itemsAdded {
+    border: 1px solid #8bb8da;
+    margin-left: 10%;
+    padding: 2px;
+    margin-right: 1%;
+    background-color: gray;
+}
+
+.footer-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+h1 {
+    color: red;
+}

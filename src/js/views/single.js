@@ -11,6 +11,8 @@ export const Single = props => {
 
 	if (type === "person") {
 		targetItem = store.people.find(person => person.name == theid);
+		console.log(theid);
+		console.log(targetItem.name);
 	}
 
 	if (type === "planet") {

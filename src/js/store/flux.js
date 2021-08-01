@@ -61,10 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const oldFavorites = getStore().favorites;
 				const foundFavorite = oldFavorites.find(item => item === itemName);
 				if (foundFavorite) {
-					console.log("dentro del if");
-					console.log(oldFavorites);
 					const newArray = oldFavorites.filter(item => item !== foundFavorite); //remove item
-					console.log(newArray);
 					setStore({ favorites: newArray });
 				} else {
 					setStore({ favorites: [...oldFavorites, itemName] });

@@ -43,13 +43,13 @@ export const Home = () => {
 				</div>
 				<h1>Vehicles</h1>
 				<div className="row">
-					{store.vehicles.map((person, index) => {
+					{store.vehicles.map((vehicle, index) => {
 						return (
 							<div className="mb-5 col-3" key={index}>
 								<VehicleCard
-									model={person.model}
-									manufacturer={person.manufacturer}
-									name={person.name}
+									model={vehicle.model}
+									manufacturer={vehicle.manufacturer}
+									name={vehicle.name}
 								/>
 							</div>
 						);
