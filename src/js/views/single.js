@@ -11,8 +11,6 @@ export const Single = props => {
 
 	if (type === "person") {
 		targetItem = store.people.find(person => person.name == theid);
-		console.log(theid);
-		console.log(targetItem.name);
 	}
 
 	if (type === "planet") {
@@ -23,12 +21,34 @@ export const Single = props => {
 		targetItem = store.vehicles.find(vehicle => vehicle.name == theid);
 	}
 
+	const itemProperties = () => {
+		let itemProperties = {};
+		if (type == "person") {
+			(itemProperties.firstProperty = "Hair Color: " + targetItem.hair_color),
+				(itemProperties.secondProperty = targetItem.birth_year),
+				(itemProperties.thridProperty = targetItem.height);
+		}
+		if (type == "planet") {
+			(itemProperties.firstProperty = targetItem.climate),
+				(itemProperties.secondProperty = targetItem.diameter),
+				(itemProperties.thridProperty = targetItem.name);
+		}
+		if (type == "vehicle") {
+			(itemProperties.firstProperty = targetItem.manufacturer),
+				(itemProperties.secondProperty = targetItem.cargo_capacity),
+				(itemProperties.thridProperty = targetItem.cost_in_credits);
+		}
+		return itemProperties;
+	};
+
+	console.log("ESTO ES UNA PROPIEDAD!", itemProperties());
+
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">{targetItem.name}</h1>
-
+			<h1 className="display-4">{itemProperties().firstProperty}</h1>
+			<h1 className="display-4">{itemProperties().secondProperty}</h1>
+			<h1 className="display-4">{itemProperties().thridProperty}</h1>
 			<hr className="my-4" />
-
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home
