@@ -24,9 +24,12 @@ export const Single = props => {
 	const itemProperties = () => {
 		let itemProperties = {};
 		if (type == "person") {
-			(itemProperties.firstProperty = "Hair Color: " + targetItem.hair_color),
-				(itemProperties.secondProperty = targetItem.birth_year),
-				(itemProperties.thridProperty = targetItem.height);
+			(itemProperties.firstProperty = targetItem.name),
+				(itemProperties.secondProperty = "Birth Year: " + targetItem.birth_year),
+				(itemProperties.thirdProperty = "Gender: " + targetItem.gender),
+				(itemProperties.fourthProperty = "Height: " + targetItem.height),
+				(itemProperties.fifthProperty = "Hair Color: " + targetItem.hair_color),
+				(itemProperties.sixthProperty = "Eye Color: " + targetItem.eye_color);
 		}
 		if (type == "planet") {
 			(itemProperties.firstProperty = targetItem.climate),
@@ -44,16 +47,55 @@ export const Single = props => {
 	console.log("ESTO ES UNA PROPIEDAD!", itemProperties());
 
 	return (
-		<div className="jumbotron">
-			<h1 className="display-4">{itemProperties().firstProperty}</h1>
-			<h1 className="display-4">{itemProperties().secondProperty}</h1>
-			<h1 className="display-4">{itemProperties().thridProperty}</h1>
+		<div className="container">
+			<div>
+				<div className="row">
+					<div className="col" id="img">
+						<img src="http://lorempixel.com/800/600" alt="Girl in a jacket" width="500" height="500" />
+					</div>
+					<div className="col" id="lorem">
+						<h1>{itemProperties().firstProperty}</h1>
+						<h4>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien tellus, consequat
+							vitae pulvinar non, fringilla in diam. Aliquam viverra finibus elementum. Sed ipsum risus,
+							volutpat ac sollicitudin eget, aliquam nec urna. Sed feugiat nec sapien vel consectetur.
+							Morbi rhoncus fringilla odio eget semper. Fusce mattis non velit vel hendrerit. Nam nec
+							sagittis.
+						</h4>
+					</div>
+					<hr />
+					<div />
+					<div className="row">
+						<div className="col">
+							<h2>{"Name: " + itemProperties().firstProperty}</h2>
+						</div>
+						<div className="col">
+							<h2>{itemProperties().secondProperty}</h2>
+						</div>
+						<div className="col">
+							<h2>{itemProperties().thirdProperty}</h2>
+						</div>
+						<div className="col">
+							<h2>{itemProperties().fourthProperty}</h2>
+						</div>
+						<div className="col">
+							<h2>{itemProperties().fifthProperty}</h2>
+						</div>
+						<div className="col">
+							<h2>{itemProperties().sixthProperty}</h2>
+						</div>
+					</div>
+				</div>
+				{/* <h2 className="display-4">{itemProperties().firstProperty}</h2>
+			<h2 className="display-4">{itemProperties().secondProperty}</h2>
+			<h2 className="display-4">{itemProperties().thridProperty}</h2>
 			<hr className="my-4" />
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home
 				</span>
-			</Link>
+			</Link> */}
+			</div>
 		</div>
 	);
 };

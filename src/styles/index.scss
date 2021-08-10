@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(31, 30, 30);
+    background-color: rgb(255, 255, 255);
 }
 .contenedor {
     display: flex;
@@ -41,5 +41,32 @@ body {
 }
 
 h1 {
+    color: red;
+}
+
+.footer {
+    // position: fixed;
+    margin-top: 10vw !important;
+    bottom: 0;
+    width: 100%;
+}
+
+#lorem {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+hr { 
+    width: 50%;
+    text-align: left;
+    margin-left: 0;
+    color: red;
+    margin-top: 35px !important;
+    height: 2px;
+}
+
+h2 {
     color: red;
 }
