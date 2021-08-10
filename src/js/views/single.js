@@ -32,14 +32,20 @@ export const Single = props => {
 				(itemProperties.sixthProperty = "Eye Color: " + targetItem.eye_color);
 		}
 		if (type == "planet") {
-			(itemProperties.firstProperty = targetItem.climate),
-				(itemProperties.secondProperty = targetItem.diameter),
-				(itemProperties.thridProperty = targetItem.name);
+			(itemProperties.firstProperty = targetItem.name),
+				(itemProperties.secondProperty = "Population: " + targetItem.population),
+				(itemProperties.thirdProperty = "Diameter: " + targetItem.diameter),
+				(itemProperties.fourthProperty = "Terrain: " + targetItem.terrain),
+				(itemProperties.fifthProperty = "Gravity: " + targetItem.gravity),
+				(itemProperties.sixthProperty = "Climate: " + targetItem.climate);
 		}
 		if (type == "vehicle") {
-			(itemProperties.firstProperty = targetItem.manufacturer),
-				(itemProperties.secondProperty = targetItem.cargo_capacity),
-				(itemProperties.thridProperty = targetItem.cost_in_credits);
+			(itemProperties.firstProperty = targetItem.name),
+				(itemProperties.secondProperty = "Model: " + targetItem.model),
+				(itemProperties.thirdProperty = "Cost in credits: " + targetItem.cost_in_credits),
+				(itemProperties.fourthProperty = "Vehicle class: " + targetItem.vehicle_class),
+				(itemProperties.fifthProperty = "Manufacturer: " + targetItem.manufacturer),
+				(itemProperties.sixthProperty = "Cargo capacity: " + targetItem.cargo_capacity);
 		}
 		return itemProperties;
 	};
