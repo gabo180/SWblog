@@ -57,7 +57,12 @@ export const Single = props => {
 			<div>
 				<div className="row">
 					<div className="col" id="img">
-						<img src="http://lorempixel.com/800/600" alt="Girl in a jacket" width="500" height="500" />
+						<img
+							src="https://12ax7web.s3.amazonaws.com/accounts/1/products/1986199881779/Obi-Wan-Kenobi-Darth-Vader--Luke-Skywalker_800x800_SEPS-1000x1000.jpg"
+							alt="star wars"
+							width="500"
+							height="500"
+						/>
 					</div>
 					<div className="col" id="lorem">
 						<h1>{itemProperties().firstProperty}</h1>
