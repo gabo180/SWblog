@@ -14,7 +14,7 @@ export const Home = () => {
 				<div className="row">
 					{store.people.map((person, index) => {
 						return (
-							<div className="mb-5 col-3" key={index}>
+							<div className="mb-3 col-3" key={index}>
 								<CharacterCard
 									hair={person.hair_color}
 									eye={person.eye_color}
@@ -30,7 +30,7 @@ export const Home = () => {
 				<div className="row">
 					{store.planets.map((planet, index) => {
 						return (
-							<div className="mb-5 col-3" key={index}>
+							<div className="mb-3 col-3" key={index}>
 								<PlanetCard
 									index={index}
 									terrain={planet.terrain}
@@ -45,7 +45,7 @@ export const Home = () => {
 				<div className="row">
 					{store.vehicles.map((vehicle, index) => {
 						return (
-							<div className="mb-5 col-3" key={index}>
+							<div className="mb-3 col-3" key={index}>
 								<VehicleCard
 									model={vehicle.model}
 									manufacturer={vehicle.manufacturer}

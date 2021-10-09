@@ -15,7 +15,7 @@ export const VehicleCard = props => {
 	);
 
 	return (
-		<div className="card" style={{ width: "18rem" }}>
+		<div className="card" style={({ width: "18rem" }, { height: "100%" })}>
 			<img
 				src="https://cdn-3d.niceshops.com/upload/image/product/medium/default/revell-star-wars-snowspeeder-model-kit-1-pc-312811-en.jpg"
 				className="card-img-top"

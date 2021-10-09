@@ -17,7 +17,7 @@ export const CharacterCard = props => {
 	// const isFavorite = () => store.favorites.includes(props.name)
 
 	return (
-		<div className="card" style={{ width: "18rem" }}>
+		<div className="card" style={({ width: "18rem" }, { height: "100%" })}>
 			<img
 				src="https://lumiere-a.akamaihd.net/v1/images/Darth-Vader_6bda9114.jpeg?region=0%2C23%2C1400%2C785&width=768"
 				className="card-img-top"

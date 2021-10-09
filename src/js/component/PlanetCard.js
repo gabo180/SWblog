@@ -15,7 +15,7 @@ export const PlanetCard = props => {
 	);
 
 	return (
-		<div className="card" style={{ width: "18rem" }}>
+		<div className="card" style={({ width: "18rem" }, { height: "100%" })}>
 			<img
 				src="https://pm1.narvii.com/6602/64da297fad3769371c760c5b59f617c4d1be7e5c_hq.jpg"
 				className="card-img-top"

@@ -36,12 +36,13 @@ body {
     justify-content: space-between;
 }
 
-.container {
-    margin-top: 100px;
-}
+// .container {
+//     margin-top: 100px;
+// }
 
 h1 {
     color: red;
+    margin-top: 3rem;
 }
 
 .footer {
@@ -69,4 +70,23 @@ hr {
 
 h2 {
     color: red;
+}
+
+.row {
+    flex-wrap: nowrap !important;
+    overflow: auto !important;
+}
+
+.col-3 {
+    width: 25% !important;
+}
+
+.single-item {     
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;     
+    display: flex;     
+    flex-wrap: wrap !important;    
+    margin-top: calc(var(--bs-gutter-y) * -1);    
+    margin-right: calc(var(--bs-gutter-x) * -.5);     
+    margin-left: calc(var(--bs-gutter-x) * -.5); 
 }

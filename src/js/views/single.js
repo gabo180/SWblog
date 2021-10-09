@@ -55,7 +55,7 @@ export const Single = props => {
 	return (
 		<div className="container">
 			<div>
-				<div className="row">
+				<div className="row single-item">
 					<div className="col" id="img">
 						<img
 							src="https://12ax7web.s3.amazonaws.com/accounts/1/products/1986199881779/Obi-Wan-Kenobi-Darth-Vader--Luke-Skywalker_800x800_SEPS-1000x1000.jpg"
